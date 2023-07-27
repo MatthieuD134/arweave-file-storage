@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "build": "yarn tsc",
+    "store-file": "node ./bin/store-file.js",
+    "generate-key": "node ./bin/generate-key.js"
+  },
+  "devDependencies": {
+    "@types/mime": "^3.0.1",
+    "@types/node": "^20.4.5",
+    "arweave": "^1.14.0",
+    "tsc": "^2.0.4",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "mime": "^3.0.0"
+  }
+}
