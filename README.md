@@ -26,7 +26,7 @@ npm install
 
 ## Usage
 
-befor running any command, be sure to build the project with the following command:
+before running any command, be sure to build the project with the following command:
 
 ```bash
 yarn build
