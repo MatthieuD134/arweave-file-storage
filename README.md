@@ -26,6 +26,12 @@ npm install
 
 ## Usage
 
+befor running any command, be sure to build the project with the following command:
+
+```bash
+yarn build
+```
+
 ### 1. Storing a Single File to Arweave
 
 To store a single file on Arweave, use the following command:
