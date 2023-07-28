@@ -2,7 +2,8 @@
   "scripts": {
     "build": "yarn tsc",
     "store-file": "node ./bin/store-file.js",
-    "generate-key": "node ./bin/generate-key.js"
+    "generate-key": "node ./bin/generate-key.js",
+    "get-public-key": "node ./bin/get-public-key.js"
   },
   "devDependencies": {
     "@types/mime": "^3.0.1",
