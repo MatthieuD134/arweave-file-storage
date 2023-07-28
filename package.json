@@ -2,6 +2,8 @@
   "scripts": {
     "build": "yarn tsc",
     "store-file": "node ./bin/store-file.js",
+    "store-bundle": "node ./bin/store-bundle.js",
+    "watch-tx": "node ./bin/watch-transaction.js",
     "generate-key": "node ./bin/generate-key.js",
     "get-public-key": "node ./bin/get-public-key.js"
   },
@@ -13,6 +15,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "arbundles": "^0.9.8",
     "dotenv": "^16.3.1",
     "mime": "^3.0.0"
   }
