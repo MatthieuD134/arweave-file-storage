@@ -60,7 +60,8 @@ async function storeFiles() {
         await arweave.transactions.sign(transaction, arweaveKey);
         const response = await arweave.transactions.post(transaction);
         if (response.status === 400) {
-            console.error(`Transaction failed for file ${files[index]}` + response);
+            console.error(`Transaction failed for file ${files[index]}`);
+            console.log(response);
         }
         else {
             console.log({

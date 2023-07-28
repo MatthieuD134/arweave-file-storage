@@ -82,10 +82,11 @@ async function storeBundle() {
     const response = await arweave.transactions.post(transaction);
 
     if (response.status === 400) {
-        console.error("Transaction failed: " + response);
+        console.error("Transaction failed");
+        console.log(response);
         process.exit(1);
     }
-    
+
     console.log("Transaction sent: " + response.status);
     console.log("Transaction ID: " + transaction.id);
 }
