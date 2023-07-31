@@ -93,7 +93,11 @@ async function storeBundle() {
         process.exit(1);
     }
 
-    console.log(bundle.getIds().map((id, index) => ({ file: files[index], media: `https://arweave.net/${id}`})));
+    console.log(bundle.getIds().map((id, index) => ({
+        file: files[index], 
+        media: `${argv.local ? 'http://127.0.0.1:1984/' : 'https://arweave.net/'}${id}`}
+        ))
+    );
     console.log("Transaction sent: " + response.status);
     console.log("Transaction ID: " + transaction.id);
 }
