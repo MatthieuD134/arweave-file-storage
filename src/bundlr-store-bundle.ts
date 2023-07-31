@@ -73,6 +73,7 @@ async function bundlrStoreBundle() {
             }
         );
         console.log(`Data uploaded ==> https://arweave.net/${response.id}`);
+        console.log(bundle.getIds().map((id, index) => ({ file: files[index], media: `https://arweave.net/${id}`})));
         console.log(response);
     }
     catch (err) {
