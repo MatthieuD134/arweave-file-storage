@@ -1,10 +1,11 @@
 import { JWKInterface } from "arweave/node/lib/wallet";
+import minimist from 'minimist';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
 
 export function retrieveArguments() {
-    return process.argv.slice(2);
+    return minimist(process.argv.slice(2));
 }
 
 export function getArweaveKey() {

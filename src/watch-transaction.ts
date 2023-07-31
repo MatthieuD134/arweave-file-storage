@@ -4,14 +4,20 @@ import { TransactionStatusResponse } from "arweave/node/transactions";
 
 async function watchTransaction() {
     // #1 get the transaction id to watch for from the command line
-    const transactionId = retrieveArguments()[0];
+    const argv = retrieveArguments();
+    const transactionId = argv._[0];
 
     // #2 initialize Arweave
-    const arweave = Arweave.init({
-        host: 'arweave.net',
-        port: 443,
-        protocol: 'https'
-    });
+    const arweave = Arweave.init(
+        argv.local ? {
+            host: '127.0.0.1',
+            port: 1984,
+            protocol: 'http'
+        }: {
+            host: 'arweave.net',
+            port: 443,
+            protocol: 'https'
+      });
 
     // #3 watch for the transaction status
     let status: TransactionStatusResponse = {

@@ -5,8 +5,9 @@ import { Arweave, ArweaveSigner, bundleAndSignData, createData } from "arbundles
 
 async function storeBundle() {
     // #1 retrieve all files/folders to store, from the arguments passed in command line
-    const files = retrieveArguments();
-
+    const argv = retrieveArguments();
+    const files = argv._;
+    
     if (files.length === 0) {
         console.error('No file to store');
         process.exit(1);
@@ -38,10 +39,15 @@ async function storeBundle() {
     });
 
     // #3 Make a connection to Arweave server; following standard example.
-    const arweave = Arweave.init({
-        host: 'arweave.net',
-        port: 443,
-        protocol: 'https'
+    const arweave = Arweave.init(
+        argv.local ? {
+            host: '127.0.0.1',
+            port: 1984,
+            protocol: 'http'
+        }: {
+            host: 'arweave.net',
+            port: 443,
+            protocol: 'https'
       });
 
     // #4 Load our key from the .env file

@@ -7,10 +7,12 @@
     "bundlr-store-bundle": "node ./bin/bundlr-store-bundle.js",
     "watch-tx": "node ./bin/watch-transaction.js",
     "generate-key": "node ./bin/generate-key.js",
-    "get-public-key": "node ./bin/get-public-key.js"
+    "get-public-key": "node ./bin/get-public-key.js",
+    "run-arlocal": "node ./bin/run-arlocal.js"
   },
   "devDependencies": {
     "@types/mime": "^3.0.1",
+    "@types/minimist": "^1.2.2",
     "@types/node": "^20.4.5",
     "arweave": "^1.14.0",
     "tsc": "^2.0.4",
@@ -20,6 +22,7 @@
     "@bundlr-network/client": "^0.11.9",
     "arbundles": "^0.9.8",
     "dotenv": "^16.3.1",
-    "mime": "^3.0.0"
+    "mime": "^3.0.0",
+    "minimist": "^1.2.8"
   }
 }

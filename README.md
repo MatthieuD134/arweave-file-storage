@@ -32,22 +32,33 @@ before running any command, be sure to build the project with the following comm
 yarn build
 ```
 
+### Running a Local Arweave Instance
+To store a single file on Arweave, use the following command:
+
+```bash
+yarn run-arlocal
+```
+
+This command will start a local Arweave node using arlocal. It will also send funds to the wallet associated with your Arweave key, allowing you to perform test transactions on the local instance.
+
 ### 1. Storing a Single File to Arweave
 
 To store a single file on Arweave, use the following command:
 
 ```bash
-yarn store-file <path_to_file>
+yarn store-file <path_to_file> [--local] 
 ```
 
 Replace <path_to_file> with the path to the file you want to upload.
+
+The '--local' flag is an optional flag that can be used with this command. When this flag is present, the script will use the local Arweave instance started by arlocal instead of interacting with the main Arweave network. This is useful for testing and development purposes, as it allows you to perform transactions on your local instance without incurring actual costs on the main network.
 
 ### 2. Storing Multiple Files as a Bundle to Arweave
 
 To store multiple files as a bundle on Arweave, use the following command:
 
 ```bash
-yarn store-bundle <path_to_file1> <path_to_file2> ... <path_to_fileN>
+yarn store-bundle [--local] <path_to_file1> <path_to_file2> ... <path_to_fileN>
 ```
 
 Replace <path_to_file1>, <path_to_file2>, etc., with the paths to the files you want to include in the bundle. The minimum number of files required for a bundle is two.
@@ -89,6 +100,7 @@ To get the public address associated with an Arweave key, use the following comm
 ```bash
 yarn get-public-key
 ```
+
 ## Configuration
 Before running the scripts that interact with Arweave, make sure to configure your Arweave key by setting the ARWEAVE_KEY environment variable. You can do this by creating a .env file in the root of this repository and adding the following content:
 
@@ -98,6 +110,7 @@ ARWEAVE_KEY=<your_arweave_key>
 Replace <your_arweave_key> with your actual Arweave key in JSON format.
 
 ## Dependencies
+
 The following dependencies are used in this repository:
 
 - @bundlr-network/client: The Bundlr client library for interacting with Arweave nodes.
@@ -105,8 +118,9 @@ The following dependencies are used in this repository:
 - dotenv: For loading environment variables from the .env file.
 - mime: For determining the MIME type of files.
 - arweave: The Arweave SDK for interacting with the Arweave blockchain.
-- 
-License
+- arlocal: A tool for running a local Arweave instance for testing and development purposes.
+
+## License
 This repository is licensed under the MIT License. Feel free to use and modify the code as needed.
 
 ## Disclaimer

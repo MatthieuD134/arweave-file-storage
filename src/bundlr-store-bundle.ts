@@ -6,7 +6,8 @@ import { ArweaveSigner, bundleAndSignData, createData } from "arbundles";
 
 async function bundlrStoreBundle() {
     // #1 retrieve all files/folders to store, from the arguments passed in command line
-    const files = retrieveArguments();
+    const argv = retrieveArguments();
+    const files = argv._;
 
     if (files.length === 0) {
         console.error('No file to store');
