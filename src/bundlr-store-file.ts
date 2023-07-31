@@ -5,7 +5,7 @@ import Bundlr from "@bundlr-network/client";
 
 async function bundlrStoreFile() {
     // #1 retrieve single file, from the arguments passed in command line
-    const argv = retrieveArguments()[0];
+    const argv = retrieveArguments();
     const file = argv._[0];
 
     if (file === undefined) {
